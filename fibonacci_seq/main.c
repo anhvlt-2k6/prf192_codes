@@ -28,7 +28,7 @@ int main() {
 		arr[i] = arr[i - 1] + arr[i - 2];
 	}
 	
-	printf("The Fibonacci sequence with 8 numbers is:\n");
+	printf("The Fibonacci sequence with %d numbers is:\n", n);
 	for (int j = 0; j < n; j++) {
 		if (j != n - 1) printf("%d, ", arr[j]);
 		else printf("%d", arr[j]);
