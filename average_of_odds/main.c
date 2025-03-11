@@ -14,7 +14,11 @@ int main() {
 		}
 	}
 	
-	printf("%.3lf", (double)sum_odds/count_odds);
+	if (count_odds > 0) {
+		printf("%.3lf", (double)sum_odds/count_odds);
+	} else {
+		printf("No prime number exists");
+	}
 	
 	return 0;
 }
