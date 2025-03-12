@@ -21,7 +21,7 @@ bool telephone_number(const char *pon_num) {
 	if (len < 6) return false;
 	if (pon_num[0] != '(') return false;
 	
-	for (size_t i = 0; i < len; i++) {
+	for (int i = 0; i < (int)len; i++) {
 		if (pon_num[i] == ')') {
 			close_paren_loc = i;
 			break;
@@ -32,9 +32,9 @@ bool telephone_number(const char *pon_num) {
 	if (close_paren_loc - 1 < 2 || close_paren_loc - 1 > 4) return false;
 	if ((int)len - (close_paren_loc + 1) != 7) return false;
 	
-	for (int j = 1; j < (int)strlen(pon_num); j++) {
+	for (int j = 1; j < (int)len; j++) {
         if (j == close_paren_loc) {
-            continue; // skip the ')'
+            continue;
         }
         if (!isdigit((unsigned char)pon_num[j])) {
             return false;
@@ -47,12 +47,11 @@ bool telephone_number(const char *pon_num) {
 int main() {
 	
 	int n, count_valid = 0;
-	char *pon_num;
+	char *pon_num = malloc(64 * sizeof(char));;
 	
 	scanf("%d", &n);
 	
 	for (int i = 0; i < n; i++) {
-		pon_num = malloc(64 * sizeof(char));
 		scanf("%63s", pon_num);
 		
 		if (mobile_phone_number(pon_num) || telephone_number(pon_num)) {
@@ -60,8 +59,8 @@ int main() {
 		}
 		
 		free(pon_num);
-		pon_num = NULL;
 	}
 	
 	printf("%d", count_valid);
+	return 0;
 }
