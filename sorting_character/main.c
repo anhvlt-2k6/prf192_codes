@@ -10,12 +10,12 @@ int main() {
 	
 	char *str_a;
 	int n;
-	str_a = malloc(1024 * sizeof(int));
+	str_a = (char*)malloc(1024 * sizeof(char));
 	
 	scanf("%[^\n]", str_a);
 	
 	n = strlen(str_a);
-	str_a = realloc(str_a, n);
+	str_a = (char*)realloc(str_a, n);
 	qsort(str_a, n, sizeof(char), comp);
 	
 	for (int i = 0; i < n; i++) {
