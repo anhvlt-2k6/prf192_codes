@@ -1,11 +1,8 @@
-#include <stdio.h>
-#include <stdlib.h>
-
 int comp(const void *a, const void *b) {
 	return *(int*)b - *(int*)a;
 }
 
-int main() {
+void prob04() {
 	
 	int n, *arr;
 	
@@ -22,6 +19,4 @@ int main() {
 	for (int j = 0; j < n; j++) {
 		if (arr[j] % 2 != 0) printf("%d ", arr[j]);
 	}
-	
-	return 0;
 }

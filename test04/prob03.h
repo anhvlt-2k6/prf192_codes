@@ -1,7 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <math.h>
-
 double factional(double n) {
 	if (n > 1.0) {
 		return (n * factional(n - 1.0));
@@ -18,7 +14,7 @@ double sumToSQRT(double n) {
 	}
 }
 
-int main() {
+void prob03() {
 	
 	double n, sum = 0.0;
 	
@@ -29,6 +25,4 @@ int main() {
 	}
 	
 	printf("%lf", sum);
-	
-	return 0;
 }

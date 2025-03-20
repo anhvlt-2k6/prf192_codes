@@ -1,7 +1,4 @@
-#include <stdio.h>
-#include <stdlib.h>
-
-int main() {
+void prob02() {
 	
 	double salary;
 	
@@ -18,6 +15,4 @@ int main() {
 	} else {
 		printf(" ?");
 	}
-	
-	return 0;
 }
