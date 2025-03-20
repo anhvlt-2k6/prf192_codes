@@ -21,13 +21,13 @@ int main() {
 	qsort(num, n, sizeof(int), comp);
 	
 	for (int j = 0; j < n - 1; j++) {
-		if (num[j] % 2 != 0 && num[j] == num[j+1] && num[j] != duplicate[count - 1]) {
+		if (num[j] % 2 != 0 && num[j] == num[j+1] && (count == 0 || num[j] != duplicate[count - 1])) {
 			duplicate[count] = num[j];
 			count++;
 		}
 	}
 	
-	duplicate = realloc(duplicate, count);
+	duplicate = realloc(duplicate, count * sizeof(int));
 	
 	for (int l = 0; l < count; l++) {
 		printf("%d\n", duplicate[l]);
