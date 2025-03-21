@@ -1,7 +1,7 @@
 #include <stdio.h>
 
 /*
-Fibonacy (?) number product series from n to m
+fibonacci (?) number product series from n to m
 
 Fib series look like this: 0,1,1,2,3,5,..., but let exclude the 0 and starting from 1 instead (we all know why)
 */
